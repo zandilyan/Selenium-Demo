@@ -1,17 +1,39 @@
 package selenium;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.IOException;
 
 public class FirstGitFile {
-    public static void main(String[] args) throws InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/");
+    public WebDriver driver;
+
+    @BeforeMethod
+    @Parameters({"browser"})
+
+    public void test1(@Optional("browser") String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "usr/bin/chromedriver");
+            ChromeOptions option = new ChromeOptions();
+            option.addArguments("--headless");
+            option.addArguments("window-size=1920,1080");
+            option.addArguments("--disable-gpu");
+            driver = new ChromeDriver(option);
+            driver.get("https://www.saucedemo.com/");
+        }
+    }
+
+    @Test
+    public void TEST093050() throws InterruptedException, IOException {
         System.out.println(driver.getTitle());
         String ActualTitle = driver.getTitle();
         String ExpectedTitle = "Swag Labs";
@@ -47,3 +69,4 @@ public class FirstGitFile {
         driver.close();
     }
 }
+

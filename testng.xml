@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="D:/Private/Selenium-Demo/src/main/java/selenium/FirstGitFile.java">
-        <classes>
-            <class name="selenium.FirstGitFile"></class>
-        </classes>
-    </test>
-</suite>
