@@ -23,6 +23,7 @@ public class FirstGitFile {
     public void test1(@Optional("browser") String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "usr/bin/chromedriver");
+//            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
             ChromeOptions option = new ChromeOptions();
             option.addArguments("--headless");
             option.addArguments("window-size=1920,1080");
