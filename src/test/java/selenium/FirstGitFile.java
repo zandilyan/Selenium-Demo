@@ -30,6 +30,7 @@ public class FirstGitFile {
             option.addArguments("--headless");
             option.addArguments("window-size=1920,1080");
             option.addArguments("--disable-gpu");
+            option.addArguments("--no-sandbox");
             driver = new ChromeDriver();
             driver.get("https://www.saucedemo.com/");
         }
