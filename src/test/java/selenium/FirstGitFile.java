@@ -31,7 +31,7 @@ public class FirstGitFile {
             option.addArguments("window-size=1920,1080");
             option.addArguments("--disable-gpu");
             option.addArguments("--no-sandbox");
-            option.addArguments("--remote-debugging-port=9222");
+            option.addArguments("--disable-dev-shm-usage");
 
             driver = new ChromeDriver();
             driver.get("https://www.saucedemo.com/");
